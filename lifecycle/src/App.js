@@ -13,7 +13,14 @@ class App extends React.Component {
   componentDidMount() {
     axios
       .get("https://api.github.com/users/stkirk")
-      .then((res) => console.log("GitHub Response", res.data));
+      .then((res) => {
+        console.log("GitHub Response", res.data);
+        this.setState({
+          ...this.state,
+          user: res.data,
+        });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     return (
