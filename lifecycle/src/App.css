@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: darkred;
+  font-weight: bold;
+  border: 1px solid darkred;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+button {
+  margin-bottom: 15px;
+}
+
+img {
+  border: 1px solid darkred;
+  border-radius: 7px;
+}
+
+.user-profile,
+.follower-section {
+  padding: 1.5%;
+}
+
+.followers-list {
+  border: 1px solid darkred;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+.followers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.follower-card {
+  border: 2px solid darkred;
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  width: 300px;
+  margin: 10px 0;
+  padding: 3%;
+}
+
+.follower-img img {
+  width: 250px;
+}
