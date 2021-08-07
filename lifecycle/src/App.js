@@ -43,7 +43,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>gitHub User</h1>
+        <h1>GitHub User Profile</h1>
         <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     );

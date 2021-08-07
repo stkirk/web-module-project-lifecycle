@@ -17,24 +17,37 @@ class UserCard extends React.Component {
   };
   render() {
     return (
-      <section className="user-card">
-        <div className="img-wrapper">
-          <img src={this.props.user.avatar_url} alt="user" />
-        </div>
-        <h3>{this.props.user.name}</h3>
-        <p>User Name: {this.props.user.login}</p>
-        <p>Company: {this.props.user.company}</p>
-        <div className="link-wrapper">
-          <a href={this.props.user.html_url}>GitHub Page</a>
-        </div>
-        <div onClick={this.toggleFollowersList} className="followers-list">
-          {this.state.displayFollowers ? (
-            <FollowersList followers={this.props.followers} />
-          ) : (
-            `See ${this.props.user.name}'s ${this.props.user.followers} followers`
-          )}
-        </div>
-      </section>
+      <div className="user-card">
+        <section className="user-profile">
+          <div className="img-wrapper">
+            <img src={this.props.user.avatar_url} alt="user" />
+          </div>
+          <h3>{this.props.user.name}</h3>
+          <p>User Name: {this.props.user.login}</p>
+          <p>Company: {this.props.user.company}</p>
+          <div className="link-wrapper">
+            <a href={this.props.user.html_url}>GitHub Page</a>
+          </div>
+        </section>
+
+        <section className="follower-section">
+          <div className="followers-list">
+            <div className="button-div">
+              <button onClick={this.toggleFollowersList}>
+                {this.state.displayFollowers
+                  ? "Hide Followers"
+                  : "Show Followers"}
+              </button>
+            </div>
+
+            {this.state.displayFollowers ? (
+              <FollowersList followers={this.props.followers} />
+            ) : (
+              `${this.props.user.name} has ${this.props.user.followers} followers on GitHub`
+            )}
+          </div>
+        </section>
+      </div>
     );
   }
 }
